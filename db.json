@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": 1, 
+      "title": "Dis-moi", 
+      "body": "Dis-moi dans l'fond c'que tu veux. Tu veux prendre ma vie. Tu veux voir le monde de mes yeux. Tu veux mon avenir"
+    },
+    {
+      "id": 2, 
+      "title": "J'ai vu", 
+      "body": "J'ai vu ta façon de regarder. J'ai vu dans ton vice. Tu fais tout pour prendre mon bébé. T'en dors plus la nuit"
+    },
+    {
+      "id": 3, 
+      "title": "Je connais", 
+      "body": "Je connais ce genre de fille. C'est la psychiatrie. Snap visé en noir sur blanc dans sa story. Viens pas postuler ici, t'es impolie"
+    }
+  ],
+  "comments": [
+    {"postId": 1,
+     "id": 1,
+     "text": "J'aime trop cette chanson!!"
+    },
+    {
+      "postId": 1,
+     "id": 2,
+     "text": "Moi meme si. T'as une tres bonne voix, Imen :)"    
+    },
+    {
+      "postId": 2,
+     "id": 1,
+     "text": "This give me goose bumps. I'm so happy I discovered this gem."
+    },
+    {
+      "postId": 2,
+     "id": 2,
+     "text": "I've kept this on repeat since like yesterday."
+    },
+    {
+      "postId": 3,
+     "id": 1,
+     "text": "Gotta love the lyrics though..."
+    }
+  ]
+}
