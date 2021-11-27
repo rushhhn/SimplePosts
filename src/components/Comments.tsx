@@ -73,7 +73,7 @@ export const Comments: React.FC<ICommentsProps> = ({postId}) => {
   };
 
   if (isLoading) {
-    return <ActivityIndicator size="small" color="white" />;
+    return <ActivityIndicator size="large" color="white" style={{flex: 1}} />;
   }
 
   if (error) {

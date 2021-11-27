@@ -33,6 +33,7 @@ const MyTheme = {
 };
 
 const screenOptions = {
+  headerShown: false,
   headerStyle: {
     backgroundColor: 'grey',
     shadowColor: 'white',

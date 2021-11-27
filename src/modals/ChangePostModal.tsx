@@ -37,7 +37,7 @@ export const ChangePostModal: React.FC<IChangePostModalProps> = ({
       <ImageBackground
         source={require('../img/screenBG.jpg')}
         style={styles.bg}>
-        <View style={styles.textInputContainer}>
+        <View style={styles.inputContainer}>
           <TextInput
             value={title}
             onChangeText={text => setTitle(text)}

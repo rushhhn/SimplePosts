@@ -1,6 +1,6 @@
 import {addComment} from '../redux/actions/commentActions';
 import React, {useState} from 'react';
-import {ImageBackground, Modal, TextInput} from 'react-native';
+import {View, ImageBackground, Modal, TextInput} from 'react-native';
 import {AddCommentButton} from '../components/buttons/AddCommentButton';
 import {styles} from '../styles/styles';
 // @ts-ignore
@@ -37,16 +37,18 @@ export const AddCommentModal: React.FC<IAddCommentModal> = ({
       <ImageBackground
         source={require('../img/screenBG.jpg')}
         style={styles.bg}>
-        <TextInput
-          autoFocus
-          autoCapitalize="sentences"
-          multiline
-          value={text}
-          onChangeText={txt => setText(txt)}
-          placeholder="Write ur comment"
-          placeholderTextColor="grey"
-          style={styles.textInput}
-        />
+        <View style={styles.inputContainer}>
+          <TextInput
+            autoFocus
+            autoCapitalize="sentences"
+            multiline
+            value={text}
+            onChangeText={txt => setText(txt)}
+            placeholder="Write ur comment"
+            placeholderTextColor="grey"
+            style={styles.textInput}
+          />
+        </View>
         <AddCommentButton
           buttonName="Add comment"
           buttonIcon={addIcon}

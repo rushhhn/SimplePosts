@@ -5,6 +5,7 @@ import {useTypedSelector} from '../redux/hooks/typedSelectors';
 import {StackScreenProps} from '@react-navigation/stack';
 import {TStackParamList} from '../../App';
 import {Comments} from './Comments';
+import {Header} from './Header';
 
 type TPostItemProps = StackScreenProps<TStackParamList, 'PostItem'>;
 
@@ -17,6 +18,7 @@ export const PostItem: React.FC<TPostItemProps> = ({route}) => {
       <ImageBackground
         source={require('../img/screenBG.jpg')}
         style={styles.bg}>
+        <Header title="PostItem" />
         <View style={styles.cardContainer}>
           <View style={styles.card}>
             <View style={styles.cardHeader}>

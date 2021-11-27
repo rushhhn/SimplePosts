@@ -1,6 +1,7 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
 const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 export const styles = StyleSheet.create({
   screen: {
@@ -10,14 +11,20 @@ export const styles = StyleSheet.create({
   },
   bg: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     alignSelf: 'stretch',
   },
+  header: {
+    position: 'absolute',
+    top: 0,
+    width: '100%',
+    alignSelf: 'stretch',
+    padding: 5,
+    backgroundColor: 'grey',
+  },
   flatlist: {
     alignSelf: 'stretch',
-    paddingVertical: 20,
-    marginTop: 30,
   },
   card: {
     alignSelf: 'center',
@@ -29,7 +36,7 @@ export const styles = StyleSheet.create({
     elevation: 5,
   },
   cardContainer: {
-    marginVertical: 15,
+    marginTop: 70,
     flexDirection: 'row',
     justifyContent: 'center',
   },
@@ -80,8 +87,9 @@ export const styles = StyleSheet.create({
     marginVertical: 5,
     elevation: 5,
   },
-  textInputContainer: {
-    marginVertical: 30,
+  inputContainer: {
+    marginTop: height / 3,
+    marginBottom: 50,
   },
   circle: {
     height: 30,
@@ -100,6 +108,11 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 14,
     marginHorizontal: 5,
+  },
+  fatText: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: 'white',
   },
   commentText: {color: 'grey', textAlign: 'left', marginHorizontal: 5},
 });

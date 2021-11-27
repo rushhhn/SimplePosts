@@ -22,6 +22,7 @@ import {DeleteButton} from './buttons/DeleteButton';
 import {deletePost} from '../redux/actions/postActions';
 //@ts-ignore
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import {Header} from './Header';
 
 type INavigationProps = {
   PostItem: {id: number};
@@ -108,6 +109,7 @@ export const PostList = ({navigation}: StackScreenProps<INavigationProps>) => {
       <ImageBackground
         source={require('../img/screenBG.jpg')}
         style={styles.bg}>
+        <Header title={'PostList'} />
         <FlatList
           data={posts}
           renderItem={renderItem}

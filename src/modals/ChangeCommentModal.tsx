@@ -26,7 +26,7 @@ export const ChangeCommentModal: React.FC<IChangeCommentModal> = ({
       <ImageBackground
         source={require('../img/screenBG.jpg')}
         style={styles.bg}>
-        <View style={styles.textInputContainer}>
+        <View style={styles.inputContainer}>
           <TextInput
             autoFocus
             multiline

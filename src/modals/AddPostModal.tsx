@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Modal, ImageBackground} from 'react-native';
+import {View, Modal, ImageBackground} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
 import {styles} from '../styles/styles';
 import {AddPostButton} from '../components/buttons/AddPostButton';
@@ -33,25 +33,27 @@ export const AddPostModal: React.FC<IAddModalProps> = ({visible, toggle}) => {
       <ImageBackground
         source={require('../img/screenBG.jpg')}
         style={styles.bg}>
-        <TextInput
-          autoFocus
-          value={title}
-          onChangeText={text => setTitle(text)}
-          style={styles.textInput}
-          placeholder="Subject"
-          placeholderTextColor="grey"
-          multiline
-          maxLength={40}
-        />
-        <TextInput
-          value={body}
-          onChangeText={text => setBody(text)}
-          style={styles.textInput}
-          placeholder="What's on ur mind?"
-          placeholderTextColor="grey"
-          multiline
-          maxLength={1000}
-        />
+        <View style={styles.inputContainer}>
+          <TextInput
+            autoFocus
+            value={title}
+            onChangeText={text => setTitle(text)}
+            style={styles.textInput}
+            placeholder="Subject"
+            placeholderTextColor="grey"
+            multiline
+            maxLength={40}
+          />
+          <TextInput
+            value={body}
+            onChangeText={text => setBody(text)}
+            style={styles.textInput}
+            placeholder="What's on ur mind?"
+            placeholderTextColor="grey"
+            multiline
+            maxLength={1000}
+          />
+        </View>
         <AddPostButton
           buttonName="Add post"
           toggle={toggle}
