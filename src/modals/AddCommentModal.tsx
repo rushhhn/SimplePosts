@@ -3,8 +3,6 @@ import React, {useState} from 'react';
 import {View, ImageBackground, Modal, TextInput} from 'react-native';
 import {AddCommentButton} from '../components/buttons/AddCommentButton';
 import {styles} from '../styles/styles';
-// @ts-ignore
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface IAddCommentModal {
   visible: boolean;
@@ -51,7 +49,6 @@ export const AddCommentModal: React.FC<IAddCommentModal> = ({
         </View>
         <AddCommentButton
           buttonName="Add comment"
-          buttonIcon={addIcon}
           toggle={toggle}
           action={addComment}
           content={newComment}
@@ -61,5 +58,3 @@ export const AddCommentModal: React.FC<IAddCommentModal> = ({
     </Modal>
   );
 };
-
-const addIcon = <Icon name="add" size={18} color="white" />;

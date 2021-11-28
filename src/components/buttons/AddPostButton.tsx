@@ -4,8 +4,7 @@ import {styles} from '../../styles/styles';
 import {useDispatch} from 'react-redux';
 import {IPost, TPostActions} from '../../redux/types/PostTypes';
 import {Dispatch} from 'redux';
-//@ts-ignore
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import {AddIcon} from '../../icons/AddIcon';
 
 interface IAddButtonProps {
   buttonName: string;
@@ -43,7 +42,7 @@ export const AddPostButton: React.FC<IAddButtonProps> = ({
     <TouchableOpacity style={styles.btn} onPress={pressHandler}>
       <Text style={styles.text}> {buttonName} </Text>
       <View style={styles.circle}>
-        <Icon name="add" size={18} color="white" />
+        <AddIcon />
       </View>
     </TouchableOpacity>
   );

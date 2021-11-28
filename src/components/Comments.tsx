@@ -10,8 +10,6 @@ import {DeleteButton} from '../components/buttons/DeleteButton';
 import {ChangeCommentModal} from '../modals/ChangeCommentModal';
 import {AddCommentModal} from '../modals/AddCommentModal';
 import {ToggleButton} from './buttons/ToggleButton';
-//@ts-ignore
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface ICommentsProps {
   postId: number;
@@ -52,18 +50,13 @@ export const Comments: React.FC<ICommentsProps> = ({postId}) => {
   const renderItem = ({item}: {item: IComment}) => {
     return (
       <View style={styles.commentContainer}>
-        <DeleteButton
-          buttonIcon={deleteIcon}
-          action={deleteComment}
-          payload={item.id}
-        />
+        <DeleteButton action={deleteComment} payload={item.id} />
         <View style={styles.comment}>
           <Text style={styles.commentText}>
             {item.id} {item.text}
           </Text>
         </View>
         <ToggleButton
-          buttonIcon={editIcon}
           toggle={toggleChangeCommentModalVisible}
           setContent={handleAddCommentModal}
           content={item}
@@ -73,7 +66,9 @@ export const Comments: React.FC<ICommentsProps> = ({postId}) => {
   };
 
   if (isLoading) {
-    return <ActivityIndicator size="large" color="white" style={{flex: 1}} />;
+    return (
+      <ActivityIndicator size="large" color="white" style={styles.activity} />
+    );
   }
 
   if (error) {
@@ -100,12 +95,8 @@ export const Comments: React.FC<ICommentsProps> = ({postId}) => {
         parentId={postId}
       />
       <View style={styles.btnContainer}>
-        <ToggleButton buttonIcon={addIcon} toggle={toggleAddCommentModal} />
+        <ToggleButton toggle={toggleAddCommentModal} />
       </View>
     </>
   );
 };
-
-const addIcon = <Icon name="add" size={18} color="white" />;
-const editIcon = <Icon name="edit" size={18} color="white" />;
-const deleteIcon = <Icon name="delete" size={18} color="white" />;

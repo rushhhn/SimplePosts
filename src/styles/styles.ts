@@ -25,6 +25,9 @@ export const styles = StyleSheet.create({
   },
   flatlist: {
     alignSelf: 'stretch',
+    marginTop: 30,
+    marginBottom: 20,
+    paddingBottom: 20,
   },
   card: {
     alignSelf: 'center',
@@ -115,4 +118,5 @@ export const styles = StyleSheet.create({
     color: 'white',
   },
   commentText: {color: 'grey', textAlign: 'left', marginHorizontal: 5},
+  activity: {flex: 1},
 });

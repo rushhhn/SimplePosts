@@ -3,16 +3,16 @@ import {TouchableOpacity} from 'react-native';
 import {styles} from '../../styles/styles';
 import {IComment} from '../../redux/types/CommentTypes';
 import {IPost} from '../../redux/types/PostTypes';
+import {EditIcon} from '../../icons/EditIcon';
+import {AddIcon} from '../../icons/AddIcon';
 
 interface IToggleButtonProps {
-  buttonIcon: JSX.Element;
   toggle(boolean: boolean): void;
   content?: IComment | IPost;
   setContent?(comment: IComment | IPost): void;
 }
 
 export const ToggleButton: React.FC<IToggleButtonProps> = ({
-  buttonIcon,
   toggle,
   content,
   setContent,
@@ -26,7 +26,7 @@ export const ToggleButton: React.FC<IToggleButtonProps> = ({
   };
   return (
     <TouchableOpacity style={styles.circle} onPress={pressHandler}>
-      {buttonIcon}
+      {content ? <EditIcon /> : <AddIcon />}
     </TouchableOpacity>
   );
 };

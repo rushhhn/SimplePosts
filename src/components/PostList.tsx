@@ -20,8 +20,6 @@ import {ChangePostModal} from '../modals/ChangePostModal';
 import {ToggleButton} from './buttons/ToggleButton';
 import {DeleteButton} from './buttons/DeleteButton';
 import {deletePost} from '../redux/actions/postActions';
-//@ts-ignore
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Header} from './Header';
 
 type INavigationProps = {
@@ -54,11 +52,7 @@ export const PostList = ({navigation}: StackScreenProps<INavigationProps>) => {
   const renderItem = ({item}: {item: IPost}) => {
     return (
       <View style={styles.cardContainer}>
-        <DeleteButton
-          action={deletePost}
-          payload={item.id}
-          buttonIcon={deleteIcon}
-        />
+        <DeleteButton action={deletePost} payload={item.id} />
 
         <TouchableOpacity
           style={styles.card}
@@ -74,7 +68,6 @@ export const PostList = ({navigation}: StackScreenProps<INavigationProps>) => {
           </View>
         </TouchableOpacity>
         <ToggleButton
-          buttonIcon={editIcon}
           toggle={toggleChangePostModal}
           setContent={handleChangePostModal}
           content={item}
@@ -113,6 +106,7 @@ export const PostList = ({navigation}: StackScreenProps<INavigationProps>) => {
         <FlatList
           data={posts}
           renderItem={renderItem}
+          showsVerticalScrollIndicator={false}
           keyExtractor={post => post.id.toString()}
           style={styles.flatlist}
         />
@@ -127,13 +121,9 @@ export const PostList = ({navigation}: StackScreenProps<INavigationProps>) => {
           setBody={setPostBody}
         />
         <View style={styles.btnContainer}>
-          <ToggleButton toggle={handleAddPostModal} buttonIcon={addIcon} />
+          <ToggleButton toggle={handleAddPostModal} />
         </View>
       </ImageBackground>
     </SafeAreaView>
   );
 };
-
-const addIcon = <Icon name="add" size={18} color="white" />;
-const editIcon = <Icon name="edit" size={18} color="white" />;
-const deleteIcon = <Icon name="delete" size={18} color="white" />;

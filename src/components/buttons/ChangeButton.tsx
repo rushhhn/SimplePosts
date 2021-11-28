@@ -1,13 +1,12 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, View, Text} from 'react-native';
 import {styles} from '../../styles/styles';
 import {useDispatch} from 'react-redux';
 import {Dispatch} from 'redux';
 import {TPostActions} from '../../redux/types/PostTypes';
 import {IPost} from '../../redux/types/PostTypes';
 import {IComment, TCommentActions} from '../../redux/types/CommentTypes';
-//@ts-ignore
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import {EditIcon} from '../../icons/EditIcon';
 
 interface IChangeButtonProps {
   buttonName: string;
@@ -19,6 +18,7 @@ interface IChangeButtonProps {
 }
 
 export const ChangeButton: React.FC<IChangeButtonProps> = ({
+  buttonName,
   action,
   payload,
   toggle,
@@ -30,8 +30,11 @@ export const ChangeButton: React.FC<IChangeButtonProps> = ({
     toggle(false);
   };
   return (
-    <TouchableOpacity style={styles.circle} onPress={pressHandler}>
-      <Icon name="edit" size={18} color="white" />
+    <TouchableOpacity style={styles.btn} onPress={pressHandler}>
+      <Text style={styles.text}>{buttonName}</Text>
+      <View style={styles.circle}>
+        <EditIcon />
+      </View>
     </TouchableOpacity>
   );
 };

@@ -4,10 +4,10 @@ import {styles} from '../../styles/styles';
 import {useDispatch} from 'react-redux';
 import {Dispatch} from 'redux';
 import {IComment, TCommentActions} from '../../redux/types/CommentTypes';
+import {AddIcon} from '../../icons/AddIcon';
 
 interface IAddButtonProps {
   buttonName: string;
-  buttonIcon: JSX.Element;
   toggle(boolean: boolean): void;
   action(
     content: IComment,
@@ -18,7 +18,6 @@ interface IAddButtonProps {
 
 export const AddCommentButton: React.FC<IAddButtonProps> = ({
   buttonName,
-  buttonIcon,
   toggle,
   action,
   content,
@@ -42,7 +41,9 @@ export const AddCommentButton: React.FC<IAddButtonProps> = ({
   return (
     <TouchableOpacity style={styles.btn} onPress={pressHandler}>
       <Text style={styles.text}> {buttonName} </Text>
-      <View style={styles.circle}>{buttonIcon}</View>
+      <View style={styles.circle}>
+        <AddIcon />
+      </View>
     </TouchableOpacity>
   );
 };

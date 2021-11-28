@@ -54,7 +54,7 @@ export const ChangePostModal: React.FC<IChangePostModalProps> = ({
           />
         </View>
         <ChangeButton
-          buttonName="V"
+          buttonName="Edit post"
           action={changePost}
           payload={newPost}
           toggle={toggle}

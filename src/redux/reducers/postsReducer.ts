@@ -26,10 +26,12 @@ export const postsReducer = (
         posts: state.posts.filter(post => post.id !== action.payload),
       };
     case EPostAction.CHANGE_POST:
-      state.posts.splice(action.payload.id - 1, 1, action.payload);
+      let newPosts = state.posts.map(post =>
+        post.id === action.payload.id ? action.payload : post,
+      );
       return {
         ...state,
-        posts: state.posts,
+        posts: newPosts,
       };
     default:
       return state;

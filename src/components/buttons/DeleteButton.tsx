@@ -5,19 +5,18 @@ import {useDispatch} from 'react-redux';
 import {Dispatch} from 'redux';
 import {TPostActions} from '../../redux/types/PostTypes';
 import {TCommentActions} from '../../redux/types/CommentTypes';
+import {DeleteIcon} from '../../icons/DeleteIcon';
 
 interface IDeleteButtonProps {
   action(
     id: number,
   ): (dispatch: Dispatch<TPostActions | TCommentActions>) => Promise<void>;
   payload: number;
-  buttonIcon: JSX.Element;
 }
 
 export const DeleteButton: React.FC<IDeleteButtonProps> = ({
   action,
   payload,
-  buttonIcon,
 }) => {
   const dispatch = useDispatch();
   const pressHandler = () => {
@@ -25,7 +24,7 @@ export const DeleteButton: React.FC<IDeleteButtonProps> = ({
   };
   return (
     <TouchableOpacity style={styles.circle} onPress={pressHandler}>
-      {buttonIcon}
+      <DeleteIcon />
     </TouchableOpacity>
   );
 };

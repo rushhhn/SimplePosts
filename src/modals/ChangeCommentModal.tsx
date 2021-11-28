@@ -39,7 +39,7 @@ export const ChangeCommentModal: React.FC<IChangeCommentModal> = ({
           />
         </View>
         <ChangeButton
-          buttonName="P"
+          buttonName="Edit comment"
           action={changeComment}
           payload={comment}
           toggle={toggle}
