@@ -5,7 +5,6 @@
 import 'react-native';
 import React from 'react';
 import App from '../App';
-import {test} from '../MicCheck';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
@@ -14,8 +13,4 @@ jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 
 it('renders correctly', () => {
   renderer.create(<App />);
-});
-
-test('testing test', () => {
-  expect(test(1, 2)).toBe(3);
 });
